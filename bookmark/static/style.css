@@ -1,0 +1,39 @@
+/* 스타일: Head 텍스트 색상 */
+h1, h2, h3, h4, h5 {
+    color: #327039; /* 초록색 */
+}
+
+/* 스타일: 화면 배경색 */
+body {
+    background-color: rgba(235, 220, 175, 1); /* 연한 베이지색 */
+}
+
+/* 스타일: 리스트 배경 및 테두리 */
+.table {
+    background-color: rgba(235, 220, 175, 1); /* 리스트와 배경 동일한 색상 */
+    border: 2px solid black; /* 검정색 테두리 */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th,
+.table td {
+    border: 1px solid black; /* 테두리 추가 */
+}
+
+/* 테이블 헤더 텍스트 강조 */
+.table th {
+    background-color: #f5f5dc; /* 밝은 베이지색 헤더 */
+    font-weight: bold;
+}
+
+/* 수정 및 삭제 버튼 스타일 조정 */
+.btn-success {
+    background-color: #327039; /* 초록색 버튼 */
+    border-color: #327039;
+}
+
+.btn-danger {
+    background-color: #a83232; /* 짙은 빨간색 */
+    border-color: #a83232;
+}

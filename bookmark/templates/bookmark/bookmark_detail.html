@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+    Detail
+{% endblock %}
+{% block content %}
+<h1>{{ object.site_name }}</h1>
+<p>URL: <a href="{{ object.url }}" target="_blank">{{ object.url }}</a></p>
+
+<div class="mt-4">
+     <!-- 즐겨찾기 상태 확인 -->
+        {% if favorite %}
+            <span class="badge badge-warning">즐겨찾기 추가됨</span>
+        {% else %}
+            <span class="badge badge-secondary">즐겨찾기 안됨</span>
+        {% endif %}
+
+    <!-- 수정 버튼 -->
+    <a href="{% url 'update' pk=object.id %}" class="btn btn-success">수정하기</a>
+
+    <!-- 삭제 버튼 -->
+    <form action="{% url 'delete' pk=object.id %}" method="post" style="display: inline;" onsubmit="return confirm('정말 삭제하시겠습니까?');">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">삭제하기</button>
+    </form>
+</div>
+{% endblock %}

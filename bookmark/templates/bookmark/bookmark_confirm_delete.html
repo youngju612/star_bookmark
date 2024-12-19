@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Confirm Delete{% endblock %}
+
+{% block content %}
+<form action="{% url 'delete' pk=object.id %}" method="post"style="display: inline;" onsubmit="return confirm('정말 삭제하시겠습니까?');">
+  {% csrf_token %}
+  <div class="alert alert-danger">정말로 Bookmark "{{object}}" 지우실건가요?</div>
+  <input type="submit" value="삭제하기" class="btn btn-danger">
+</form>
+
+{% endblock %}

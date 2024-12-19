@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Favorite Bookmarks{% endblock %}
+
+{% block content %}
+<h1>Favorite Bookmarks</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Num</th>
+            <th>Site</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for bookmark in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ bookmark.site_name }}</td>
+            <td><a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
